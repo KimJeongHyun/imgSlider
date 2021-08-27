@@ -2,9 +2,15 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const path = require('path');
+const database = require('./database')();
 
+database.db_open();
+
+const fileUpload = require('./controller/fileUpload');
 
 const port = 5000;
+
+app.use(fileUpload);
 
 app.use(express.json({
     limit:'50mb'
@@ -15,6 +21,9 @@ app.use(express.urlencoded({
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
+
+
+app.get('/api/hello',(req,res)=>res.send('hello'))
 
 const server = http.createServer(app);
 server.listen(port, ()=>console.log(`Server Start. Port : ${port}`))
