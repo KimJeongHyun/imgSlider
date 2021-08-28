@@ -15,7 +15,7 @@ class NavBar extends Component{
                             <a href="/fileUpload" id="linkName">Upload</a>
                         </li>
                         <li id="nav-item">
-                            Slide
+                            <a href="/imgSlide" id="linkName">Slide!</a>
                         </li>
                     </ul>
                 </nav>
