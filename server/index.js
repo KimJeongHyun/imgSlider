@@ -2,9 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const path = require('path');
-const database = require('./database')();
 
-database.db_open();
 
 const fileUpload = require('./controller/fileUpload');
 

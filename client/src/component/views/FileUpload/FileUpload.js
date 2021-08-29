@@ -54,7 +54,7 @@ class FileUpload extends Component{
             <div>
                 <NavBar/>
                 <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems: 'center',
-            width:'100%',height:'100vh', marginTop:'10vh', position:'fixed'}}>
+            width:'100%',height:'100vh', marginTop:'10vh', position:'relative'}}>
                 <div style={{border:'0.2rem solid', width:'40%', height:'70%',textAlign:'center', display:'flex',justifyContent:'center',alignItems:'center'}}>
                         {!$imagePreview && <img src={FilePath} style={{width:'80%', maxHeight:'400px'}}/>}
                 </div>

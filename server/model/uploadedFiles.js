@@ -4,6 +4,6 @@ const fileSchema = mongoose.Schema({
     filePath:String
 })
 
-const File = mongoose.model('File',fileSchema);
+const files = mongoose.model('files',fileSchema);
 
-module.exports = {File}
+module.exports = {files}
