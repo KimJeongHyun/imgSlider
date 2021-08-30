@@ -47,6 +47,13 @@ class FileUpload extends Component{
         .then(response=>{console.log(response)})
     }
 
+    getFile = () =>{
+        axios.get('/api/getFile')
+        .then(response=>{
+            console.log(response);
+        })
+    }
+
     render(){
         let {FilePath} = this.state;
         let $imagePreview = null;
@@ -64,7 +71,8 @@ class FileUpload extends Component{
                 {this.state.Seen ? <PopUp toggle={this.onSeenHandler} fileHandler={this.onFileHandler}/> : null}
                 <input type="text" value={this.state.FileName} onChange={this.onFileNameHandler}></input>
                 <br/>
-                <button onClick={this.submitFile}>제출</button>                
+                <button onClick={this.submitFile}>제출</button>    
+                <button onClick={this.getFile}>테스트</button>            
             </div>
             </div>
             

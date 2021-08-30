@@ -5,10 +5,12 @@ const path = require('path');
 
 
 const fileUpload = require('./controller/fileUpload');
+const getFilePath = require('./controller/getFilePath')
 
 const port = 5000;
 
 app.use(fileUpload);
+app.use(getFilePath);
 
 app.use(express.json({
     limit:'50mb'
