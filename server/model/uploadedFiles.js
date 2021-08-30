@@ -13,7 +13,7 @@ const fileSchema = mongoose.Schema({
 fileSchema.plugin(autoIncrement.plugin, {
     model: 'files',
     field: 'seq',
-    startAt: 1, //시작
+    startAt: 0, //시작
     increment: 1 // 증가
 });
 

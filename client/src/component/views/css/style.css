@@ -30,6 +30,7 @@
   margin:0;
   padding:0;
   background-color:#11101d;
+  z-index: 1;
 }
 
 #nav-item{

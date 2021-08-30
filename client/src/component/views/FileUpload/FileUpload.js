@@ -44,13 +44,10 @@ class FileUpload extends Component{
         const formData = new FormData;
         formData.append('img',this.state.File);
         axios.post('/api/upload',formData)
-        .then(response=>{console.log(response)})
-    }
-
-    getFile = () =>{
-        axios.get('/api/getFile')
         .then(response=>{
-            console.log(response);
+            if (response.data.uploadSuccess){
+                alert('업로드 성공!');
+            }
         })
     }
 
@@ -71,8 +68,7 @@ class FileUpload extends Component{
                 {this.state.Seen ? <PopUp toggle={this.onSeenHandler} fileHandler={this.onFileHandler}/> : null}
                 <input type="text" value={this.state.FileName} onChange={this.onFileNameHandler}></input>
                 <br/>
-                <button onClick={this.submitFile}>제출</button>    
-                <button onClick={this.getFile}>테스트</button>            
+                <button onClick={this.submitFile}>제출</button>             
             </div>
             </div>
             
