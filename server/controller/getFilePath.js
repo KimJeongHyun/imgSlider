@@ -8,9 +8,9 @@ router.get('/api/getFile/',(req,res)=>{
     files.find({}, function(err,files){
         var fileMap={};
         files.forEach(function(file){
-            fileMap[file.seq] = file;
+            fileMap[file.seq] = file.filePath;
         })
-        console.log(fileMap[1]);
+        console.log(fileMap);
     })
     res.json({uploadSuccess:true})
 })
