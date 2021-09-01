@@ -11,6 +11,7 @@ import {
 import LandingPage from './component/views/LandingPage/LandingPage'
 import FileUpload from './component/views/FileUpload/FileUpload'
 import Slide from './component/views/Slide/Slide'
+import ImgList from './component/views/ImgList/ImgList';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/" component={LandingPage}/>
         <Route path="/fileUpload" component={FileUpload}/>
         <Route path="/imgSlide" component={Slide}/>
+        <Route path="/imgList" component={ImgList}/>
       </Switch>
     </Router>
   );

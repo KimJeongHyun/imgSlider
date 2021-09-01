@@ -6,11 +6,13 @@ const path = require('path');
 
 const fileUpload = require('./controller/fileUpload');
 const getFilePath = require('./controller/getFilePath')
+const deleteFile = require('./controller/deleteFile')
 
 const port = 5000;
 
 app.use(fileUpload);
 app.use(getFilePath);
+app.use(deleteFile);
 
 app.use(express.json({
     limit:'50mb'

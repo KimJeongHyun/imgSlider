@@ -17,6 +17,9 @@ class NavBar extends Component{
                         <li id="nav-item">
                             <a href="/imgSlide" id="linkName">Slide!</a>
                         </li>
+                        <li id="nav-item">
+                            <a href="/imgList" id="linkName">Images</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
