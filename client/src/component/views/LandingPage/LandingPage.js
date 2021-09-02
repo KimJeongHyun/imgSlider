@@ -4,6 +4,9 @@ import NavBar from '../NavBar/NavBar';
 
 
 class LandingPage extends Component{
+
+    
+
     render(){
         return (
             <div>
