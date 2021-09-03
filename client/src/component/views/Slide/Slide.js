@@ -16,6 +16,11 @@ class Slide extends Component{
         }
     }
     componentDidMount(){
+        const imgContainerID = document.getElementById('imgContainer');
+        setTimeout(function(){
+            imgContainerID.classList.add('active');
+        },1000)
+
         const work1 = async () =>{
             await axios.get('/api/getFile')
             .then(response=>{
@@ -40,7 +45,7 @@ class Slide extends Component{
             
         }
         work1();
-        const intervalWork = () =>{
+        const intervalWork = async () =>{
             if (this.state.nowLoc<this.state.length){
                 if (this.state.nowLoc!=this.state.length-1){
                     this.setState({
@@ -52,9 +57,10 @@ class Slide extends Component{
                     })
                 }
             }
+            
         }
-        this.state.interval = setInterval(function(){
-            intervalWork();
+        this.state.interval = setInterval(async function(){
+            await intervalWork();
         },2000);
 
         
@@ -65,6 +71,8 @@ class Slide extends Component{
     }
     
     componentDidUpdate(prevProps){
+        const imgContainerID = document.getElementById('imgContainer');
+        imgContainerID.classList.add('active');
         const result = [];
         if (this.state.length!='' && this.state.nowLoc==this.state.startKey){
             const str = this.state.FileMap[this.state.startKey].substring(14);
@@ -80,6 +88,9 @@ class Slide extends Component{
             )
             ReactDOM.render(result,document.getElementById('imgContainer'))
         }
+        setTimeout(function(){
+            imgContainerID.classList.remove('active');
+        },1000)
     }
 
     prevOnClick = () =>{
@@ -114,11 +125,9 @@ class Slide extends Component{
                 <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems: 'center',
             width:'100%',height:'100vh', marginTop:'10vh', position:'relative'}}>
                 <div style={{display:'flex', flexDirection:'row', width:'100%', justifyContent:'center', alignItems:'center'}}>
-                    <button onClick={this.prevOnClick}>prev</button>
                     <div id="imgContainer" style={{border:'0.2rem solid', width:'50%', height:'100%',textAlign:'center', display:'flex',justifyContent:'center',alignItems:'center'}}>
 
-                    </div>
-                    <button onClick={this.nextOnClick}>next</button>   
+                    </div>   
                 </div>
 
                 

@@ -58,3 +58,13 @@
   text-align: center;
   font-size:1.8em;
 }
+
+#imgContainer {
+  opacity:0;
+  transition : 0.5s ease;
+}
+
+#imgContainer.active{
+  opacity:1;
+  transition : 0.5s ease;
+}
